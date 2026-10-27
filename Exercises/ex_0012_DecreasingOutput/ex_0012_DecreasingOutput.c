@@ -15,7 +15,7 @@ void ex_0012_DecreasingOutput(void)
   do
   {
     printf("Please enter 3 integers separated by commas: ");
-    status = scanf("%d,%d,%d", &a, &b, &c);
+    status = scanf(" %d , %d , %d", &a, &b, &c);
 
     if (status == EOF)
     {
