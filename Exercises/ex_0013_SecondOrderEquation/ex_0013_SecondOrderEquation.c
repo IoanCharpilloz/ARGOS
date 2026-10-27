@@ -29,4 +29,67 @@ void ex_0013_SecondOrderEquation(void)
   const char *any_real_solution_message = "Any real is solution of this equation.\n";
 
   // TODO: read coefficients a, b and c, then print the real solutions of the equation
+  double a, b, c;
+  int status = 0;
+  const int nbExpectedValues = 3;
+
+  do
+  {
+    printf("%s", usage_message);
+    printf("%s", input_message);
+
+    status = scanf("%lf %lf %lf", &a, &b, &c);
+
+    {
+      int ch;
+      do
+      {
+        ch = getchar();
+      } while (ch != '\n' && ch != EOF);
+    }
+
+  } while (status != nbExpectedValues && status != EOF);
+
+  if (a == 0.0)
+  {
+    if (b == 0.0)
+    {
+      if (c == 0.0)
+      {
+        printf("%s", any_real_solution_message);
+      }
+      else
+      {
+        printf("%s", no_solution_message);
+      }
+    }
+    else
+    {
+      double x = -c / b;
+      printf("%s", linear_solution_message);
+      printf("x = %.4f\n", x);
+    }
+  }
+  else
+  {
+    double delta = (b * b) - (4.0 * a * c);
+
+    if (delta > 0.0)
+    {
+      double x1 = (-b + sqrt(delta)) / (2.0 * a);
+      double x2 = (-b - sqrt(delta)) / (2.0 * a);
+      printf("%s", two_real_solutions_message);
+      printf("x1 = %.4f\nx2 = %.4f\n", x1, x2);
+    }
+    else if (delta == 0.0)
+    {
+      double x = -b / (2.0 * a);
+      printf("%s", double_real_solution_message);
+      printf("x = %.4f\n", x);
+    }
+    else
+    {
+      printf("%s", no_real_solution_message);
+    }
+  }
 }
