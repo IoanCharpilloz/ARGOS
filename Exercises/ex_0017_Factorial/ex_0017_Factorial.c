@@ -32,7 +32,6 @@ void ex_0017_Factorial(void)
 
   } while ((status != 1 || n < 0) && status != EOF);
 
-  // Calcul et affichage de la factorielle
   if (status != EOF)
   {
     unsigned long long fact = 1;
