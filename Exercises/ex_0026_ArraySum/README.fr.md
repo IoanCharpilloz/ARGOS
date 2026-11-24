@@ -7,12 +7,12 @@
 **Difficulté :** 🟢 facile
 
 **Compétences testées :**
-- tableaux 1Dex_0026_ArraySum
+- tableaux 1D
 - boucle for
 
 ## Tâche
 
-Implémentez **``** pour qu'elle :
+Implémentez **`ex_0026_ArraySum`** pour qu'elle :
 
 1. déclare un tableau pouvant contenir 50 entiers maximum
 2. demande à l'utilisateur le nombre de valeurs **`n`** à saisir
